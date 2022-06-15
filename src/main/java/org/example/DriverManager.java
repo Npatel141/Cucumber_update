@@ -1,5 +1,7 @@
 package org.example;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -57,19 +59,19 @@ public class DriverManager extends Utils {
                 driver = new RemoteWebDriver(new URL(BrowserStackURL), caps);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
-//        }}else{
-//             //this is to run locally if cloud false(locally)
-//             if(browserName.equalsIgnoreCase("chrome")){
-//                 System.setProperty("webdriver.chrome.driver:", "src/test/java/drivers/chromedriver.exe");
-//                 driver=new ChromeDriver();
-//             }else if(browserName.equalsIgnoreCase("Firefox")){
-//                  System.setProperty("Webdriver.firefox.driver:","src/test/java/drivers/geckodriver.exe");
-//                  driver=new FirefoxDriver();
-//             }else if(browserName.equalsIgnoreCase("Edge")){
-//                 System.setProperty("webdriver.edge.driver:","src/test/java/drivers/msedgedriver.exe");
-//             }else{
-//                 System.out.println("your browser name is incorrect");
-//             }
+        }}else{
+            //this is to run locally if cloud false(locally)
+             if(browserName.equalsIgnoreCase("chrome")){
+                 System.setProperty("webdriver.chrome.driver:", "src/test/java/drivers/chromedriver.exe");
+                 driver=new ChromeDriver();
+             }else if(browserName.equalsIgnoreCase("Firefox")){
+                  System.setProperty("Webdriver.firefox.driver:","src/test/java/drivers/geckodriver.exe");
+                 driver=new FirefoxDriver();
+            }else if(browserName.equalsIgnoreCase("Edge")){
+                 System.setProperty("webdriver.edge.driver:","src/test/java/drivers/msedgedriver.exe");
+            }else{
+                 System.out.println("your browser name is incorrect");
+             }
 
             }
 
@@ -81,7 +83,11 @@ public class DriverManager extends Utils {
             driver.get("https://demo.nopcommerce.com/");
         }
 
+    void browserClose()
+    {
+         driver.quit();
+    }
+    }
 
-        // driver.quit();
-    }}
+
 
