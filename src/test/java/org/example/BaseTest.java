@@ -22,7 +22,7 @@ public class BaseTest extends Utils{
             takeSnapShot(result.getName());
 
         }
-        driverManager.closeBrowser();
+        //driverManager.closeBrowser();
     }
 
 }

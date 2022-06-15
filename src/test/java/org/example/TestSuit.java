@@ -14,7 +14,10 @@ public class TestSuit extends BaseTest {
     EmailAFriend emailAFriend=new EmailAFriend();
     ProductReferToAFriendSuccessfully productReferToAFriendSuccessfully=new ProductReferToAFriendSuccessfully();
    SelectedProductAccordingtoCurrency selectedProductAccordingtoCurrency=new SelectedProductAccordingtoCurrency();
-    @Test
+   NopCommerceFacebookPAage nopCommerceFacebookPAage=new NopCommerceFacebookPAage();
+   SelectedProductList selectedProductList=new SelectedProductList();
+
+   @Test
     public void verifyUserShouldAbleToRegisterSuccessufully(){
 //click in register button
         homePage.ClickOnRegisterButton();
@@ -114,7 +117,23 @@ public void VerifyUserCanVote(){
         homePage.communityPollVoteSuccessfully();
 }
 
+@Test
+public void getProductTitles(){
+        homePage.getProductTitles();
+}
+@Test
+public void userShouldBeAbleToClickOnFacebook(){
+       //To Verify user should be able to click on facebook page
+        homePage.verifyUserShouldbeAbleToClickOnFacebookPage();
 
+        nopCommerceFacebookPAage.handleMultiWindow();
+}
+@Test
+public void userShouldBeAbleToSeeListOfSearchProduct(){
+       homePage.verifyUserShouldbeAbletoEnterProductInSearchbox();
+        selectedProductList.listOfSelectedProducts();
+
+    }
 
 
 }
