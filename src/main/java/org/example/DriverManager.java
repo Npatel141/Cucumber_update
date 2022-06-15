@@ -28,7 +28,7 @@ public class DriverManager extends Utils {
         if (cloud) {
             System.out.println("running cloud");
             //applying conditional loop for different browser options
-            if (browserName.equalsIgnoreCase("Chrome")) {
+            if (browserName.equalsIgnoreCase("Cgtihrome")) {
                 caps.setCapability("browserName", "Chrome");
                 caps.setCapability("browserVersion", "latest");
                 HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
