@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class Utils extends BasePage{
     public static String randomDate()
     {
         Date date =new Date();
-        SimpleDateFormat format=new SimpleDateFormat("dd/MM/yyyyhhmmss");
+        SimpleDateFormat format=new SimpleDateFormat("ddMMyyyyhhmmss");
         String strDate=format.format(date);
         return format.format(date);
     }
@@ -72,6 +73,11 @@ public class Utils extends BasePage{
         {
             e.printStackTrace();
         }
+
+    }
+    public static void verifyCurrentUrl(String category_url )
+    {
+        Assert.assertEquals(driver.getCurrentUrl(),category_url);
 
     }
 

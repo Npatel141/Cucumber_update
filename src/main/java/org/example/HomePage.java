@@ -54,5 +54,10 @@ public class HomePage extends Utils{
         System.out.println(actualvote);
         Assert.assertNotSame(actualvote,expectedvote);
     }
+    public void clickOnCategorname(String categoryname){
+        System.out.println("My message " + categoryname);
+        clickOnElement(By.linkText(categoryname));
+    }
+
 
 }
