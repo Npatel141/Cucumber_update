@@ -20,7 +20,7 @@ public class DriverManager extends Utils {
     public final String BrowserStackURL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_ACCESS_KEY + "@hub-cloud.browserstack.com/wd/hub";
     boolean cloud = Boolean.parseBoolean(System.getProperty("cloud"));
     String browserName ="Chrome";
-   // String browserName = System.getProperty("browser");
+    // String browserName = System.getProperty("browser");
 
     public void openBrowser() {
         //making decision cloud true or false
@@ -60,7 +60,7 @@ public class DriverManager extends Utils {
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }}else
-            {
+        {
             //this is to run locally if cloud false(locally)
             if(browserName.equalsIgnoreCase("chrome"))
             {
