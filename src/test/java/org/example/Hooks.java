@@ -9,6 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks extends Utils{
     DriverManager driverManager=new DriverManager();
     @Before
+    //It should open browser
     public void setUp(){
         driverManager.openBrowser();
     }
